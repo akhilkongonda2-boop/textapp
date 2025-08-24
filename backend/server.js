@@ -40,6 +40,14 @@ app.use(express.json());
 app.use('/auth', authroute);
 app.use('/chat', chatroute);
 
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Catch-all route for SPA routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.csr.html'));
+});
+
 const users = {};
 
 io.on('connection', (socket) => {
