@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private API_URL = 'http://localhost:3000/auth'; // match your backend route
+  private API_URL = 'https://chatapp-4her.onrender.com/auth';
 
    // Signal to hold current logged-in username
   currentUser = signal<string>('');
@@ -56,7 +56,8 @@ loadUserFromStorage() {
 }
 
 getChatHistory(selecteduser: string) {
-  return this.http.get<Message[]>(`http://localhost:3000/chat/history?user1=${this.currentUser()}&user2=${selecteduser}`);
+  return this.http.get<Message[]>(`https://chatapp-4her.onrender.com
+/chat/history?user1=${this.currentUser()}&user2=${selecteduser}`);
 }
 
   logout() {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SocketService {
   private socket: Socket;
-  private SERVER_URL = 'http://localhost:3000';
+  private SERVER_URL = 'https://chatapp-4her.onrender.com';
   private currentUser: string | null = null;
 
   constructor() {
