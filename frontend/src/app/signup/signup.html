@@ -1,0 +1,19 @@
+<div class="form-wrapper">
+  <mat-card>
+    <h2>Signup</h2>
+    <form (ngSubmit)="signup()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="password" name="password" type="password" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit">Signup</button>
+    </form>
+    <div *ngIf="error" class="error">{{ error }}</div>
+  </mat-card>
+</div>

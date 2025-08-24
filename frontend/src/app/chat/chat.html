@@ -1,0 +1,40 @@
+<div class="chat-container">
+  <!-- Sidebar -->
+  <mat-card class="sidebar">
+    <div class="flex justify-between">
+      <div class="logout-container">
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+  </div>
+    </div>
+   
+    <mat-nav-list>
+      <mat-list-item *ngFor="let user of users"
+                     [class.selected]="user === selectedUser"
+                     (click)="selectUser(user)">
+                     <span class="online-dot" *ngIf="onlineUsers.includes(user)"></span>
+        {{ user }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
+
+  <!-- Chat Window -->
+  <mat-card class="chat-window">
+    <!-- Messages -->
+    <div class="messages">
+      <div *ngFor="let msg of messages()"
+           class="message"
+           [class.self]="msg.from === currentUser">
+        <b>{{ msg.from }}:</b> {{ msg.text }}
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="input-box">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Type a message</mat-label>
+        <input matInput [(ngModel)]="newMessage" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+    </div>
+  </mat-card>
+</div>
