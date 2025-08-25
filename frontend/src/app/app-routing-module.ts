@@ -6,7 +6,7 @@ import { Login } from './login/login';
 import { Chat} from './chat/chat';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', component: Login  },
   { path: 'signup', component: Signup },
   { path: 'login', component: Login },
   { path: 'chat', component: Chat }
