@@ -21,7 +21,7 @@
   <mat-card class="chat-window">
     <!-- Messages -->
     <div class="messages">
-      <div *ngFor="let msg of messages()"
+      <div *ngFor="let msg of messages().reverse()"
            class="message"
            [class.self]="msg.from === currentUser">
         <b>{{ msg.from }}:</b> {{ msg.text }}

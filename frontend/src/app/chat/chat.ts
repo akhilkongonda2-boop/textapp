@@ -74,6 +74,7 @@ export class Chat {
     this.selectedUser = user;
     this.auth.getChatHistory(this.selectedUser).subscribe(messages => {
       this.messages.set(messages.map(m => ({ from: m.fromUser, text: m.message })));
+     
     });
   }
 
