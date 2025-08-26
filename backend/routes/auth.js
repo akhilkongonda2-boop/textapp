@@ -32,6 +32,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/all', async (req, res) => {
   const users = await User.find({}, 'username');
+  console.log('All users:', users);
   res.json(users);
 });
 

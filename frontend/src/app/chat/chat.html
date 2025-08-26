@@ -8,10 +8,10 @@
     </div>
    
     <mat-nav-list>
-      <mat-list-item *ngFor="let user of users"
+      <mat-list-item *ngFor="let user of users()"
                      [class.selected]="user === selectedUser"
                      (click)="selectUser(user)">
-                     <span class="online-dot" *ngIf="onlineUsers.includes(user)"></span>
+                     <span class="online-dot" *ngIf="onlineUsers().includes(user)"></span>
         {{ user }}
       </mat-list-item>
     </mat-nav-list>
